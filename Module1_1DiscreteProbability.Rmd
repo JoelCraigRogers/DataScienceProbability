@@ -1,0 +1,63 @@
+---
+title: "Module 1.1 Introduction to Discrete Probability"
+output: html_notebook
+---
+#Introduction to Discrete Probability
+##Discrete Probability Video
+More useful in games of chance.
+Data science often uses continuious or numeric probability. 
+Pr(A) - Notation used to show probability of an event
+Event - Anything that can happen.
+##13.1 Discrete Probability Textbook
+##13.1.1 Relative Frequency
+Example:  We have 2 red beads and 3 blue beads in a jar.  What is the probability of drawing red? Of drawing blue?
+The event would be the specific draw:
+Draw Red = 2/5 or .4
+Draw Blue = 3/5 ot .6
+##13.1.2 Notation
+Pr(A) - Probability of specific eventA
+To accurately collect probability information we should also express a specific event in some math term.
+
+#Monte Carlo Simulation
+Sample function in R will generate random draws from our data set. 
+  Note - Default will be without replacement.  
+    Sample with replace argument will replace the used values
+Monte Carlo Simulation - How many times do we need to repeat a random sample before it is a karge enough repetition to be accurate
+Replicate function - sets how many times we want to repeat an event.
+##Bead Example
+```{r}
+# Create objects
+#create our 'urn' with 2 red and 3 blue beads
+beads <-rep(c("red" , "blue") , times = c(2 , 3))
+# Display the 'bead' urn
+beads
+# Now lets sample 1 bead at random from beads
+sample(beads, 1)
+# Now lets do lots of draws
+#set how many times
+trials <- 10000
+events <- replicate(trials, sample(beads , 1))
+#create a table to store the events
+tblEvents <- table(events)
+#Show the table we created
+tblEvents
+#Show the properties of the table
+prop.table(tblEvents)
+
+```
+```{r}
+#Create the Scrubs dataset
+# The different types of scrubs and the number of each pair
+myScrubs <-rep(c("Black M&M" , "Black Nice" , "Royal Blue" , "Naby Blue") , times = c(1 , 2 , 1 , 2))
+myScrubs #This will show all of my scrubs
+#How many days do I work a year
+workDays <- 365 #Number of days I work that year
+# Define the event as me getting dressed.
+##Replicate the number of work days we defined , sample from the my scrubs table, 1 time
+getDressed <-replicate(workDays , sample(myScrubs , 1))
+# create a table with the results of getDressed
+tblScrubsWorn <- table(getDressed)
+tblScrubsWorn
+prop.table(tblScrubsWorn)
+```
+
