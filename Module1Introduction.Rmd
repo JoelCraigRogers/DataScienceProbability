@@ -1,0 +1,13 @@
+---
+title: "Module 1:  Introduction and Welcome"
+output: html_notebook
+---
+This module will follow the probability section of the textbook. 
+
+This will built on the first 2 courses. 
+
+This will require a basic understanding of statistics. (That sucks)
+Many of the problems in the financial and other world result from people not having a strong understanding of probability.  
+
+Timeline:  Try to complete one module per week.  Each module should take around 4 hours. 
+##Introduction to Probability
