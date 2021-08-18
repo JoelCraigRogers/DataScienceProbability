@@ -1,0 +1,60 @@
+---
+title: "Module 1.2 Combinations and Permutations"
+output: html_notebook
+---
+#1.2 Combinations and Permutations
+Combinations and Permutations are for more complex events and multiple events. 
+paste()  - joins two strings together
+expand.grid()  - gives the combinations of 2 vectors or lists
+permutation(n,r) - lists the different ways that r items can be selected from a given set WHEN ORDER MATTERS!
+combinations(n,r) - lists the different combinations when oth order does not matter. 
+
+The gtools library contains these tools. 
+Examples of paste and expand.grid
+```{r}
+library(gtools)
+number <- "3"
+suit <- "Hearts"
+pasted <- paste(number , suit)
+pasted
+
+```
+This will join the two vectors together. 
+
+Joining vectors elemnt-wise with paste
+```{r}
+paste(letters[1:5] , as.character(1:5))
+```
+This generates a vector 1-5.  It then generates the first 5 letters.
+It then pastes the two together ordered by elements. 
+
+Expand Grid is used to combine multiple vectors. 
+```{r}
+clothes <- expand.grid(pants = c("blue" , "black") , shirts = c("white" , "grey" , "plat"))
+
+clothes
+
+
+```
+```{r}
+classes <-c("cleric" , "fighter" , "mage" , "rogue")
+race <- c("human" , "dwarf" , "elf")
+partyMembers <- expand.grid(race , classes)
+partyMembers
+
+```
+
+###Permutations and Combinations
+```{r}
+library(gtools)
+combinations(5,2)
+#permutations(5,2) #Choose 2 in order from 5
+all_phone_numbers <-permutations(10 , 7, v=0:9)
+n <- nrow(all_phone_numbers)
+index <- sample(n , 5)
+all_phone_numbers[index,]
+
+
+                
+```
+

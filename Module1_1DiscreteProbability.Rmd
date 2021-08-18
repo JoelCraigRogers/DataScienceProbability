@@ -60,4 +60,80 @@ tblScrubsWorn <- table(getDressed)
 tblScrubsWorn
 prop.table(tblScrubsWorn)
 ```
+##Set the Random Seed
+In some of these examples we are going to use random number generators.  This can mean that the results we get may not match the examples
+set.seed will allow us to force the system to use a specific random number system.
+Often people will use the date
+```{r}
+set.seed(1)
+set.seed(1 , sample.kind = "Rounding")
+```
+This message is normal.  It is telling you that the non-standard method is being used. 
 
+##Mean function
+The mean function can often be used to detirmine probability. 
+```{r}
+beads <-rep(c("red" , "blue"), times = c(2 , 3))
+beads
+mean(beads == "blue")
+mean(beads== "red")
+
+```
+When the mean function is used the variable you use with the function is compared against the array. 
+A FALSE is given a 0 while a TRUE is given a 1
+It then calculates the proportion of TRUE and returns the result. 
+##Probability Distributions
+When everything is discrete and in categories it is relatively straightforward to use a probability distribution.  It is the percentage of each category compared to the whole. 
+Lets create a sample for politifcal party voting. 
+```{r}
+partyMakeup <-rep(c("Republican" , "Democrat" , "Undecided" , "Green") , times = c(44 , 44 , 10 , 2))
+partyMakeup
+population = 10000
+populationbig <- 1000000
+votes <- replicate(population, sample(partyMakeup , 1))
+tblVotes <- table(votes)
+#tblVotes
+prop.table(tblVotes)
+
+votesbig <-replicate(populationbig , sample(partyMakeup , 1))
+tblVotesBig <-table(votesbig)
+prop.table(tblVotesBig)
+
+```
+##Independence
+Data independence is when the results of one event do not interfeer with the next.  
+If we replace the bead we drew in the previous example each draw the outcome is independent.  
+If we do not replace the bead, it will change the probability for the next draw because there will be one less total beads, and one less of the color you drew.  
+Conditional Probabilities - When the probability of the second event is changed by the results of the first event
+Notation:
+  Pr(A|B) = Pr(A) x Pr(A|B)
+  
+Blackjack is a good example.
+What is the probability of the first card being an Ace (A) and the second card being worth 10points (10, Jack, Queen, King)
+Since the cards are not replaced, the events are not independent.  
+Pr(AceFirst) = 4/52
+Pr(10-J-Q-K) = 16/51
+##Independence Textbook
+It is critical that when we calculate the probabilities we do not assume dependence or independence.  This can lead to errors in our results. 
+Lets retest the beads example if we do not replace
+```{r}
+beadSample <-3
+x <- sample(beads, beadSample)
+x
+```
+In this case the probability of the second/third/fourth/etc event is altered by the previous events.
+
+##13.4 Conditional Probabilities 
+When events are not independent then conditional probabilities are useful. 
+When you see the | read as 
+
+##13.5 Addition and Multiplication Rules
+##13.5.1 Multiplication Rule
+If we want the probability of 2 events both happening we use the multiplication rule.
+This assumes the events are not independent.
+Pr(A and B) = Pr(A) x Pr(B|A)
+
+##13.5.2 Multiplication rule Under Independence
+Pr(A and B and C) = Pr(A) x Pr(B) x Pr(C)
+
+##Combinations and Permutations (Video)
