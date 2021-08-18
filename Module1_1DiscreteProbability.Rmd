@@ -60,4 +60,5 @@ tblScrubsWorn <- table(getDressed)
 tblScrubsWorn
 prop.table(tblScrubsWorn)
 ```
+Lets try to create a dice roll game.
 
