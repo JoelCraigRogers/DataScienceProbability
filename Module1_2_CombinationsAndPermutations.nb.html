@@ -323,9 +323,63 @@ all_phone_numbers[index,]</code></pre>
 <!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
+<p>#Deck of Cards This will generate a deck of cards that we can use for further analysis.</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc3VpdHMgPC0gYyhcIkRpYW1vbmRzXCIgLCBcIkhlYXJ0c1wiICwgXCJDbHVic1wiICwgXCJTcGFkZXNcIilcbm51bWJlcnMgPC0gYyhcIkFjZVwiICwgXCJLaW5nXCIgLCBcIlF1ZWVuXCIgLCBcIkphY2tcIiAsIFwiMTBcIiAsIFwiOVwiICwgXCI4XCIgLCBcIjdcIiAsIFwiNlwiLCBcIjVcIiAsIFwiNFwiICwgXCIzXCIgLCBcIjJcIilcbmRlY2sgPC1leHBhbmQuZ3JpZChudW1iZXIgPSBudW1iZXJzICwgc3VpdCA9IHN1aXRzKVxuZGVjayA8LSBwYXN0ZShkZWNrJG51bWJlciAsIGRlY2skc3VpdClcbmRlY2sgI3ByaW50IHRoZSBkZWNrIHRvIHZhbGlkYXRlXG5gYGAifQ== -->
+<pre class="r"><code>suits &lt;- c(&quot;Diamonds&quot; , &quot;Hearts&quot; , &quot;Clubs&quot; , &quot;Spades&quot;)
+numbers &lt;- c(&quot;Ace&quot; , &quot;King&quot; , &quot;Queen&quot; , &quot;Jack&quot; , &quot;10&quot; , &quot;9&quot; , &quot;8&quot; , &quot;7&quot; , &quot;6&quot;, &quot;5&quot; , &quot;4&quot; , &quot;3&quot; , &quot;2&quot;)
+deck &lt;-expand.grid(number = numbers , suit = suits)
+deck &lt;- paste(deck$number , deck$suit)
+deck #print the deck to validate</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiIFsxXSBcIkFjZSBEaWFtb25kc1wiICAgXCJLaW5nIERpYW1vbmRzXCIgIFwiUXVlZW4gRGlhbW9uZHNcIiBcIkphY2sgRGlhbW9uZHNcIiBcbiBbNV0gXCIxMCBEaWFtb25kc1wiICAgIFwiOSBEaWFtb25kc1wiICAgICBcIjggRGlhbW9uZHNcIiAgICAgXCI3IERpYW1vbmRzXCIgICAgXG4gWzldIFwiNiBEaWFtb25kc1wiICAgICBcIjUgRGlhbW9uZHNcIiAgICAgXCI0IERpYW1vbmRzXCIgICAgIFwiMyBEaWFtb25kc1wiICAgIFxuWzEzXSBcIjIgRGlhbW9uZHNcIiAgICAgXCJBY2UgSGVhcnRzXCIgICAgIFwiS2luZyBIZWFydHNcIiAgICBcIlF1ZWVuIEhlYXJ0c1wiICBcblsxN10gXCJKYWNrIEhlYXJ0c1wiICAgIFwiMTAgSGVhcnRzXCIgICAgICBcIjkgSGVhcnRzXCIgICAgICAgXCI4IEhlYXJ0c1wiICAgICAgXG5bMjFdIFwiNyBIZWFydHNcIiAgICAgICBcIjYgSGVhcnRzXCIgICAgICAgXCI1IEhlYXJ0c1wiICAgICAgIFwiNCBIZWFydHNcIiAgICAgIFxuWzI1XSBcIjMgSGVhcnRzXCIgICAgICAgXCIyIEhlYXJ0c1wiICAgICAgIFwiQWNlIENsdWJzXCIgICAgICBcIktpbmcgQ2x1YnNcIiAgICBcblsyOV0gXCJRdWVlbiBDbHVic1wiICAgIFwiSmFjayBDbHVic1wiICAgICBcIjEwIENsdWJzXCIgICAgICAgXCI5IENsdWJzXCIgICAgICAgXG5bMzNdIFwiOCBDbHVic1wiICAgICAgICBcIjcgQ2x1YnNcIiAgICAgICAgXCI2IENsdWJzXCIgICAgICAgIFwiNSBDbHVic1wiICAgICAgIFxuWzM3XSBcIjQgQ2x1YnNcIiAgICAgICAgXCIzIENsdWJzXCIgICAgICAgIFwiMiBDbHVic1wiICAgICAgICBcIkFjZSBTcGFkZXNcIiAgICBcbls0MV0gXCJLaW5nIFNwYWRlc1wiICAgIFwiUXVlZW4gU3BhZGVzXCIgICBcIkphY2sgU3BhZGVzXCIgICAgXCIxMCBTcGFkZXNcIiAgICAgXG5bNDVdIFwiOSBTcGFkZXNcIiAgICAgICBcIjggU3BhZGVzXCIgICAgICAgXCI3IFNwYWRlc1wiICAgICAgIFwiNiBTcGFkZXNcIiAgICAgIFxuWzQ5XSBcIjUgU3BhZGVzXCIgICAgICAgXCI0IFNwYWRlc1wiICAgICAgIFwiMyBTcGFkZXNcIiAgICAgICBcIjIgU3BhZGVzXCIgICAgICBcbiJ9 -->
+<pre><code> [1] &quot;Ace Diamonds&quot;   &quot;King Diamonds&quot;  &quot;Queen Diamonds&quot; &quot;Jack Diamonds&quot; 
+ [5] &quot;10 Diamonds&quot;    &quot;9 Diamonds&quot;     &quot;8 Diamonds&quot;     &quot;7 Diamonds&quot;    
+ [9] &quot;6 Diamonds&quot;     &quot;5 Diamonds&quot;     &quot;4 Diamonds&quot;     &quot;3 Diamonds&quot;    
+[13] &quot;2 Diamonds&quot;     &quot;Ace Hearts&quot;     &quot;King Hearts&quot;    &quot;Queen Hearts&quot;  
+[17] &quot;Jack Hearts&quot;    &quot;10 Hearts&quot;      &quot;9 Hearts&quot;       &quot;8 Hearts&quot;      
+[21] &quot;7 Hearts&quot;       &quot;6 Hearts&quot;       &quot;5 Hearts&quot;       &quot;4 Hearts&quot;      
+[25] &quot;3 Hearts&quot;       &quot;2 Hearts&quot;       &quot;Ace Clubs&quot;      &quot;King Clubs&quot;    
+[29] &quot;Queen Clubs&quot;    &quot;Jack Clubs&quot;     &quot;10 Clubs&quot;       &quot;9 Clubs&quot;       
+[33] &quot;8 Clubs&quot;        &quot;7 Clubs&quot;        &quot;6 Clubs&quot;        &quot;5 Clubs&quot;       
+[37] &quot;4 Clubs&quot;        &quot;3 Clubs&quot;        &quot;2 Clubs&quot;        &quot;Ace Spades&quot;    
+[41] &quot;King Spades&quot;    &quot;Queen Spades&quot;   &quot;Jack Spades&quot;    &quot;10 Spades&quot;     
+[45] &quot;9 Spades&quot;       &quot;8 Spades&quot;       &quot;7 Spades&quot;       &quot;6 Spades&quot;      
+[49] &quot;5 Spades&quot;       &quot;4 Spades&quot;       &quot;3 Spades&quot;       &quot;2 Spades&quot;      </code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxua2luZ3MgPC1wYXN0ZShcIktpbmdcIiAsIHN1aXRzKVxubWVhbihkZWNrICVpbiUga2luZ3MpXG5gYGAifQ== -->
+<pre class="r"><code>kings &lt;-paste(&quot;King&quot; , suits)
+mean(deck %in% kings)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIDAuMDc2OTIzMDhcbiJ9 -->
+<pre><code>[1] 0.07692308</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<p>What is the probability of drasing a second king given that one king was drawn first.</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuaGFuZHMgPC0gcGVybXV0YXRpb25zKDUyLDIgLCB2ID0gZGVjaylcbmZpcnN0X2NhcmQgPC1oYW5kc1ssMV1cbnNlY29uZF9jYXJkIDwtIGhhbmRzWywyXVxuc3VtKGZpcnN0X2NhcmQgJWluJSBraW5ncylcbmBgYCJ9 -->
+<pre class="r"><code>hands &lt;- permutations(52,2 , v = deck)
+first_card &lt;-hands[,1]
+second_card &lt;- hands[,2]
+sum(first_card %in% kings)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIDIwNFxuIn0= -->
+<pre><code>[1] 204</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc3VtKGZpcnN0X2NhcmQgJWluJSBraW5ncyAmIHNlY29uZF9jYXJkICVpbiUga2luZ3MpIC8gc3VtKGZpcnN0X2NhcmQgJWluJSBraW5ncylcbmBgYCJ9 -->
+<pre class="r"><code>sum(first_card %in% kings &amp; second_card %in% kings) / sum(first_card %in% kings)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIDAuMDU4ODIzNTNcbiJ9 -->
+<pre><code>[1] 0.05882353</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 
-<div id="rmd-source-code">LS0tCnRpdGxlOiAiTW9kdWxlIDEuMiBDb21iaW5hdGlvbnMgYW5kIFBlcm11dGF0aW9ucyIKb3V0cHV0OiBodG1sX25vdGVib29rCi0tLQojMS4yIENvbWJpbmF0aW9ucyBhbmQgUGVybXV0YXRpb25zCkNvbWJpbmF0aW9ucyBhbmQgUGVybXV0YXRpb25zIGFyZSBmb3IgbW9yZSBjb21wbGV4IGV2ZW50cyBhbmQgbXVsdGlwbGUgZXZlbnRzLiAKcGFzdGUoKSAgLSBqb2lucyB0d28gc3RyaW5ncyB0b2dldGhlcgpleHBhbmQuZ3JpZCgpICAtIGdpdmVzIHRoZSBjb21iaW5hdGlvbnMgb2YgMiB2ZWN0b3JzIG9yIGxpc3RzCnBlcm11dGF0aW9uKG4scikgLSBsaXN0cyB0aGUgZGlmZmVyZW50IHdheXMgdGhhdCByIGl0ZW1zIGNhbiBiZSBzZWxlY3RlZCBmcm9tIGEgZ2l2ZW4gc2V0IFdIRU4gT1JERVIgTUFUVEVSUyEKY29tYmluYXRpb25zKG4scikgLSBsaXN0cyB0aGUgZGlmZmVyZW50IGNvbWJpbmF0aW9ucyB3aGVuIG90aCBvcmRlciBkb2VzIG5vdCBtYXR0ZXIuIAoKVGhlIGd0b29scyBsaWJyYXJ5IGNvbnRhaW5zIHRoZXNlIHRvb2xzLiAKRXhhbXBsZXMgb2YgcGFzdGUgYW5kIGV4cGFuZC5ncmlkCmBgYHtyfQpsaWJyYXJ5KGd0b29scykKbnVtYmVyIDwtICIzIgpzdWl0IDwtICJIZWFydHMiCnBhc3RlZCA8LSBwYXN0ZShudW1iZXIgLCBzdWl0KQpwYXN0ZWQKCmBgYApUaGlzIHdpbGwgam9pbiB0aGUgdHdvIHZlY3RvcnMgdG9nZXRoZXIuIAoKSm9pbmluZyB2ZWN0b3JzIGVsZW1udC13aXNlIHdpdGggcGFzdGUKYGBge3J9CnBhc3RlKGxldHRlcnNbMTo1XSAsIGFzLmNoYXJhY3RlcigxOjUpKQpgYGAKVGhpcyBnZW5lcmF0ZXMgYSB2ZWN0b3IgMS01LiAgSXQgdGhlbiBnZW5lcmF0ZXMgdGhlIGZpcnN0IDUgbGV0dGVycy4KSXQgdGhlbiBwYXN0ZXMgdGhlIHR3byB0b2dldGhlciBvcmRlcmVkIGJ5IGVsZW1lbnRzLiAKCkV4cGFuZCBHcmlkIGlzIHVzZWQgdG8gY29tYmluZSBtdWx0aXBsZSB2ZWN0b3JzLiAKYGBge3J9CmNsb3RoZXMgPC0gZXhwYW5kLmdyaWQocGFudHMgPSBjKCJibHVlIiAsICJibGFjayIpICwgc2hpcnRzID0gYygid2hpdGUiICwgImdyZXkiICwgInBsYXQiKSkKCmNsb3RoZXMKCgpgYGAKYGBge3J9CmNsYXNzZXMgPC1jKCJjbGVyaWMiICwgImZpZ2h0ZXIiICwgIm1hZ2UiICwgInJvZ3VlIikKcmFjZSA8LSBjKCJodW1hbiIgLCAiZHdhcmYiICwgImVsZiIpCnBhcnR5TWVtYmVycyA8LSBleHBhbmQuZ3JpZChyYWNlICwgY2xhc3NlcykKcGFydHlNZW1iZXJzCgpgYGAKCiMjI1Blcm11dGF0aW9ucyBhbmQgQ29tYmluYXRpb25zCmBgYHtyfQpsaWJyYXJ5KGd0b29scykKY29tYmluYXRpb25zKDUsMikKI3Blcm11dGF0aW9ucyg1LDIpICNDaG9vc2UgMiBpbiBvcmRlciBmcm9tIDUKYWxsX3Bob25lX251bWJlcnMgPC1wZXJtdXRhdGlvbnMoMTAgLCA3LCB2PTA6OSkKbiA8LSBucm93KGFsbF9waG9uZV9udW1iZXJzKQppbmRleCA8LSBzYW1wbGUobiAsIDUpCmFsbF9waG9uZV9udW1iZXJzW2luZGV4LF0KCgogICAgICAgICAgICAgICAgCmBgYAoK</div>
+<div id="rmd-source-code">LS0tCnRpdGxlOiAiTW9kdWxlIDEuMiBDb21iaW5hdGlvbnMgYW5kIFBlcm11dGF0aW9ucyIKb3V0cHV0OiBodG1sX25vdGVib29rCi0tLQojMS4yIENvbWJpbmF0aW9ucyBhbmQgUGVybXV0YXRpb25zCkNvbWJpbmF0aW9ucyBhbmQgUGVybXV0YXRpb25zIGFyZSBmb3IgbW9yZSBjb21wbGV4IGV2ZW50cyBhbmQgbXVsdGlwbGUgZXZlbnRzLiAKcGFzdGUoKSAgLSBqb2lucyB0d28gc3RyaW5ncyB0b2dldGhlcgpleHBhbmQuZ3JpZCgpICAtIGdpdmVzIHRoZSBjb21iaW5hdGlvbnMgb2YgMiB2ZWN0b3JzIG9yIGxpc3RzCnBlcm11dGF0aW9uKG4scikgLSBsaXN0cyB0aGUgZGlmZmVyZW50IHdheXMgdGhhdCByIGl0ZW1zIGNhbiBiZSBzZWxlY3RlZCBmcm9tIGEgZ2l2ZW4gc2V0IFdIRU4gT1JERVIgTUFUVEVSUyEKY29tYmluYXRpb25zKG4scikgLSBsaXN0cyB0aGUgZGlmZmVyZW50IGNvbWJpbmF0aW9ucyB3aGVuIG90aCBvcmRlciBkb2VzIG5vdCBtYXR0ZXIuIAoKVGhlIGd0b29scyBsaWJyYXJ5IGNvbnRhaW5zIHRoZXNlIHRvb2xzLiAKRXhhbXBsZXMgb2YgcGFzdGUgYW5kIGV4cGFuZC5ncmlkCmBgYHtyfQpsaWJyYXJ5KGd0b29scykKbnVtYmVyIDwtICIzIgpzdWl0IDwtICJIZWFydHMiCnBhc3RlZCA8LSBwYXN0ZShudW1iZXIgLCBzdWl0KQpwYXN0ZWQKCmBgYApUaGlzIHdpbGwgam9pbiB0aGUgdHdvIHZlY3RvcnMgdG9nZXRoZXIuIAoKSm9pbmluZyB2ZWN0b3JzIGVsZW1udC13aXNlIHdpdGggcGFzdGUKYGBge3J9CnBhc3RlKGxldHRlcnNbMTo1XSAsIGFzLmNoYXJhY3RlcigxOjUpKQpgYGAKVGhpcyBnZW5lcmF0ZXMgYSB2ZWN0b3IgMS01LiAgSXQgdGhlbiBnZW5lcmF0ZXMgdGhlIGZpcnN0IDUgbGV0dGVycy4KSXQgdGhlbiBwYXN0ZXMgdGhlIHR3byB0b2dldGhlciBvcmRlcmVkIGJ5IGVsZW1lbnRzLiAKCkV4cGFuZCBHcmlkIGlzIHVzZWQgdG8gY29tYmluZSBtdWx0aXBsZSB2ZWN0b3JzLiAKYGBge3J9CmNsb3RoZXMgPC0gZXhwYW5kLmdyaWQocGFudHMgPSBjKCJibHVlIiAsICJibGFjayIpICwgc2hpcnRzID0gYygid2hpdGUiICwgImdyZXkiICwgInBsYXQiKSkKCmNsb3RoZXMKCgpgYGAKYGBge3J9CmNsYXNzZXMgPC1jKCJjbGVyaWMiICwgImZpZ2h0ZXIiICwgIm1hZ2UiICwgInJvZ3VlIikKcmFjZSA8LSBjKCJodW1hbiIgLCAiZHdhcmYiICwgImVsZiIpCnBhcnR5TWVtYmVycyA8LSBleHBhbmQuZ3JpZChyYWNlICwgY2xhc3NlcykKcGFydHlNZW1iZXJzCgpgYGAKCiMjI1Blcm11dGF0aW9ucyBhbmQgQ29tYmluYXRpb25zCmBgYHtyfQpsaWJyYXJ5KGd0b29scykKY29tYmluYXRpb25zKDUsMikKI3Blcm11dGF0aW9ucyg1LDIpICNDaG9vc2UgMiBpbiBvcmRlciBmcm9tIDUKYWxsX3Bob25lX251bWJlcnMgPC1wZXJtdXRhdGlvbnMoMTAgLCA3LCB2PTA6OSkKbiA8LSBucm93KGFsbF9waG9uZV9udW1iZXJzKQppbmRleCA8LSBzYW1wbGUobiAsIDUpCmFsbF9waG9uZV9udW1iZXJzW2luZGV4LF0KCgogICAgICAgICAgICAgICAgCmBgYAojRGVjayBvZiBDYXJkcwpUaGlzIHdpbGwgZ2VuZXJhdGUgYSBkZWNrIG9mIGNhcmRzIHRoYXQgd2UgY2FuIHVzZSBmb3IgZnVydGhlciBhbmFseXNpcy4gCmBgYHtyfQpzdWl0cyA8LSBjKCJEaWFtb25kcyIgLCAiSGVhcnRzIiAsICJDbHVicyIgLCAiU3BhZGVzIikKbnVtYmVycyA8LSBjKCJBY2UiICwgIktpbmciICwgIlF1ZWVuIiAsICJKYWNrIiAsICIxMCIgLCAiOSIgLCAiOCIgLCAiNyIgLCAiNiIsICI1IiAsICI0IiAsICIzIiAsICIyIikKZGVjayA8LWV4cGFuZC5ncmlkKG51bWJlciA9IG51bWJlcnMgLCBzdWl0ID0gc3VpdHMpCmRlY2sgPC0gcGFzdGUoZGVjayRudW1iZXIgLCBkZWNrJHN1aXQpCmRlY2sgI3ByaW50IHRoZSBkZWNrIHRvIHZhbGlkYXRlCmtpbmdzIDwtcGFzdGUoIktpbmciICwgc3VpdHMpCm1lYW4oZGVjayAlaW4lIGtpbmdzKQoKCmBgYApXaGF0IGlzIHRoZSBwcm9iYWJpbGl0eSBvZiBkcmFzaW5nIGEgc2Vjb25kIGtpbmcgZ2l2ZW4gdGhhdCBvbmUga2luZyB3YXMgZHJhd24gZmlyc3QuIApgYGB7cn0KaGFuZHMgPC0gcGVybXV0YXRpb25zKDUyLDIgLCB2ID0gZGVjaykKZmlyc3RfY2FyZCA8LWhhbmRzWywxXQpzZWNvbmRfY2FyZCA8LSBoYW5kc1ssMl0Kc3VtKGZpcnN0X2NhcmQgJWluJSBraW5ncykKc3VtKGZpcnN0X2NhcmQgJWluJSBraW5ncyAmIHNlY29uZF9jYXJkICVpbiUga2luZ3MpIC8gc3VtKGZpcnN0X2NhcmQgJWluJSBraW5ncykKYGBgCgo=</div>
 
 
 

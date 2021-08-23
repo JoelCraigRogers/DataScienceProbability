@@ -60,6 +60,7 @@ tblScrubsWorn <- table(getDressed)
 tblScrubsWorn
 prop.table(tblScrubsWorn)
 ```
+<<<<<<< HEAD
 ##Set the Random Seed
 In some of these examples we are going to use random number generators.  This can mean that the results we get may not match the examples
 set.seed will allow us to force the system to use a specific random number system.
@@ -135,5 +136,8 @@ Pr(A and B) = Pr(A) x Pr(B|A)
 
 ##13.5.2 Multiplication rule Under Independence
 Pr(A and B and C) = Pr(A) x Pr(B) x Pr(C)
+=======
+Lets try to create a dice roll game.
+>>>>>>> bb58af1bfa98c0d6b371747db768064d1bee6b65
 
 ##Combinations and Permutations (Video)

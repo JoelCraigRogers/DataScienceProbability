@@ -57,4 +57,25 @@ all_phone_numbers[index,]
 
                 
 ```
+#Deck of Cards
+This will generate a deck of cards that we can use for further analysis. 
+```{r}
+suits <- c("Diamonds" , "Hearts" , "Clubs" , "Spades")
+numbers <- c("Ace" , "King" , "Queen" , "Jack" , "10" , "9" , "8" , "7" , "6", "5" , "4" , "3" , "2")
+deck <-expand.grid(number = numbers , suit = suits)
+deck <- paste(deck$number , deck$suit)
+deck #print the deck to validate
+kings <-paste("King" , suits)
+mean(deck %in% kings)
+
+
+```
+What is the probability of drasing a second king given that one king was drawn first. 
+```{r}
+hands <- permutations(52,2 , v = deck)
+first_card <-hands[,1]
+second_card <- hands[,2]
+sum(first_card %in% kings)
+sum(first_card %in% kings & second_card %in% kings) / sum(first_card %in% kings)
+```
 
