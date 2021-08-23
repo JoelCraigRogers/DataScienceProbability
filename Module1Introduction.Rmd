@@ -11,3 +11,8 @@ Many of the problems in the financial and other world result from people not hav
 
 Timeline:  Try to complete one module per week.  Each module should take around 4 hours. 
 ##Introduction to Probability
+Probabilities play a large part in most aspects of chance games as well as data science. 
+Probability - 
+Misunderstanding the probability of homeowners making a mortgage payment is the reason for the financial crisis in 2008.
+
+We will be using games of chance to demonstrate probability because they are generally simple and have clearly defined rules. 
